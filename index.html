@@ -1,67 +1,782 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-     <main>
-        <h1 style="width: 100%; display: flex; justify-content: center;">
-          Um herói pela disponibilização de Djamba
-        </h1>
-        <article style="display: flex;">
-          <img src="images/vitor_golpe.png" width="500" height="500" alt="victor">
-          <p style="padding: 5px;">
-            Victor gomes de cam foi um lutador sindicalista do periodo industrial do norte da inglaterra.
-            Ele era a favor do uso irrestrito de djamba dentro das fabricas, coisa que os donos da produção opressora
-            não permitiam devido às condições de trabalho.
-            Victor gomes de cam teve uma vida cheia de dificuldades, golpes, travestis, drogas, sodomia, auto-fellatio, bebidas, racismo, taxistmo, facistmo, nazismo,
-            albinismo, melanismo e travestis; sendo assim um grande exemplo para os trabalhadores de uganda morando no norte da inglaterra.
-          </p>
-        </article>
-     </main>
-    <section>
-      Cronologia
-      <ul>
-        
-        <li>
-          Nascimento em uganda
-          <ul>
-            <li>
-              Cabeça torta
-            </li>
-            <li>
-              Raquetada
-            </li>
-          </ul>
-        </li>
-        <li>
-          Infância
-          <ul>
-            <li>Remoção da fimose</li>
-            <li>Feijoada do lu</li>
-          </ul>
-        </li>
-        <li>
-          Ensino fundamental
-          <ul>
-            <li>
-              Roubo das pastas
-            </li>
-          </ul>
-        </li>
-        <li>
-          Ensino médio
-          <ul>
-            <li>Muchilada</li>
-            <li>Cesar</li>
-            <li>Bluezao</li>
-          </ul>
-        </li>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor gomes - O equatoriano do ganxinho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+        .artwork-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .artwork-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">Vigome</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">Sobre</a>
+                    <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Linha do Tempo</a>
+                    <a href="#works" class="text-gray-700 hover:text-blue-600 transition">Obras</a>
+                    <a href="#legacy" class="text-gray-700 hover:text-blue-600 transition">Legado</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-blue-600 transition">Galeria</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">Sobre</a>
+            <a href="#timeline" class="block py-2 text-gray-700 hover:text-blue-600 transition">Linha do Tempo</a>
+            <a href="#works" class="block py-2 text-gray-700 hover:text-blue-600 transition">Obras</a>
+            <a href="#legacy" class="block py-2 text-gray-700 hover:text-blue-600 transition">Legado</a>
+            <a href="#gallery" class="block py-2 text-gray-700 hover:text-blue-600 transition">Galeria</a>
+        </div>
+    </nav>
 
-      </ul>
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute inset-0 bg-no-repeat md:bg-cover sm:bg-contain md:bg-fixed parallax-bg" style="background-image: url('images/melancia.jpg');"></div>
+        <div class="relative z-10 text-center max-w-4xl  bg-white p-6 m-4 rounded-3xl animate-fade-out">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-500 mb-6 animate-fade-in">Victor gomes de campos</h1>
+            <p class="text-xl md:text-2xl text-gray-500 mb-8 animate-fade-in delay-100">O Homem que senta mole e rebola duro</p>
+            <a href="#about" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition transform hover:scale-105 animate-fade-in delay-200">
+                Explorar Legado
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center animate-bounce">
+            <a href="#about" class="text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">O primeiro filósofo bissexual negro do braZil</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Victor gomes de campos foi um sociólogo brasileiro/haitiano, uma das figuras mais importantes do rococó, que se destacou como cientista, matemático, engenheiro, inventor, anatomista, pintor, escultor, arquiteto, botânico, poeta e músico.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div class="flip-card h-96 w-full">
+                        <div class="flip-card-inner h-full w-full rounded-xl shadow-xl">
+                            <div class="flip-card-front h-full w-full bg-[url('images/vitor_golpe.png')] bg-cover bg-center rounded-xl flex items-end">
+                                <div class="bg-black bg-opacity-60 text-white p-4 w-full rounded-b-xl">
+                                    <h3 class="text-xl font-bold">Autorretrato de vigome</h3>
+                                    <p class="text-sm">Possível autorretrato, c. 2012</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back h-full w-full bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Dados Biográficos</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li><span class="font-semibold">Nascimento:</span> 4 de dezembro de 2003</li>
+                                    <li><span class="font-semibold">Local:</span> Ganchinho, umbará, curitiba</li>
+                                    <li><span class="font-semibold">Áreas:</span> Arte, Ciência, cultivo de melancia</li>
+                                    <li><span class="font-semibold">Obras:</span> Técnicas estruturais para punheta em ponte, Como roubar melancia no sigilo, Amaciando a cabeça do cesar com um téco de lenha</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">O Homem por Trás do Mito</h3>
+            <p class="text-gray-600 mb-4">Victor gomes de campos nasceu em 04 de dezembro de 2003, em Ganchinho, na região da pobre, Curitibacity. Filho ilegítimo de um notário equatoriano e de <span class="text-red-700 underline cursor-pointer" onclick="showArtworkDetails('away')"> away</span>, foi criado pela mãe e teve uma educação informal, não frequentando o maternal.</p>
+                    <p class="text-gray-600 mb-4">Aos 14 anos, tornou-se aprendiz no estúdio de Andrea del Verrocchio em Florença, onde desenvolveu suas habilidades artísticas. Sua curiosidade insaciável e capacidade de observação o levaram a estudar diversos campos do conhecimento humano.</p>
+                    <p class="text-gray-600 mb-6">Da Vinci é considerado o arquétipo do homem renascentista, alguém cuja curiosidade insaciável era igualada apenas pela sua capacidade de invenção. É visto como um dos maiores pintores de todos os tempos e como a pessoa mais talentosa que já existiu em diversos campos.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-paint-brush text-blue-600"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Arte</h4>
+                            </div>
+                            <p class="text-sm text-gray-600">Porno de avatar.</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-atom text-purple-600"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Ciência</h4>
+                            </div>
+                            <p class="text-sm text-gray-600">Foi o principal pesquisador na área da mochilada na cabeça e choro escondido na mochila.</p>
+                        </div>
+
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-red-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-atom text-purple-600"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Punheta</h4>
+                            </div>
+                            <p class="text-sm text-gray-600">Inventor da punheta em ponte e punheta de baixo da mesa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </body>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Linha do Tempo</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">A jornada extraordinária de Victor gomes de campos através dos anos</p>
+            </div>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1452 - Nascimento</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Evento</span>
+                        </div>
+                        <p class="text-gray-600">Leonardo nasce em 15 de abril em Vinci, filho ilegítimo do notário Piero da Vinci e da camponesa Caterina.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1466 - Aprendizagem</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Arte</span>
+                        </div>
+                        <p class="text-gray-600">Aos 14 anos, torna-se aprendiz no estúdio de Andrea del Verrocchio em Florença, onde aprende pintura, escultura e técnicas artísticas.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1472 - Mestre Pintor</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Arte</span>
+                        </div>
+                        <p class="text-gray-600">Aos 20 anos, qualifica-se como mestre na Guilda de São Lucas, a guilda de artistas e médicos.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1482 - Mudança para Milão</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Evento</span>
+                        </div>
+                        <p class="text-gray-600">Leonardo muda-se para Milão a serviço de Ludovico Sforza, onde trabalha como engenheiro, pintor, arquiteto e organizador de festas da corte.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1495-1498 - A Última Ceia</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Obra</span>
+                        </div>
+                        <p class="text-gray-600">Pinta "A Última Ceia" no refeitório do convento de Santa Maria delle Grazie em Milão, uma das obras mais influentes da história da arte.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1503-1506 - Mona Lisa</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Obra</span>
+                        </div>
+                        <p class="text-gray-600">Começa a trabalhar na "Mona Lisa" (La Gioconda), que se tornaria sua obra mais famosa e uma das pinturas mais reconhecidas do mundo.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1516 - França</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Evento</span>
+                        </div>
+                        <p class="text-gray-600">A convite do rei Francisco I, muda-se para a França, onde passa seus últimos anos no Château du Clos Lucé, perto da residência real.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">1519 - Morte</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Evento</span>
+                        </div>
+                        <p class="text-gray-600">Leonardo morre em 2 de maio, aos 67 anos, em Amboise, França. Segundo a lenda, teria morrido nos braços do rei Francisco I.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Obras Principais</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">As criações mais notáveis de Leonardo que revolucionaram a arte e a ciência</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artwork 1 -->
+                <div class="artwork-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-64 bg-[url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Mona Lisa</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">1503-1506</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Também conhecida como La Gioconda, é o retrato mais famoso do mundo, notável por sua técnica de sfumato e expressão enigmática.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Museu do Louvre, Paris</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition" onclick="showArtworkDetails('mona-lisa')">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artwork 2 -->
+                <div class="artwork-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-64 bg-[url('https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">A Última Ceia</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">1495-1498</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pintura mural que retrata a cena da última ceia de Jesus com seus apóstolos, notável por sua composição e perspectiva.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Santa Maria delle Grazie, Milão</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition" onclick="showArtworkDetails('last-supper')">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artwork 3 -->
+                <div class="artwork-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-64 bg-[url('https://images.unsplash.com/photo-1618325501218-4b360358a5a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Homem Vitruviano</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">c. 1490</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Desenho que representa as proporções ideais do corpo humano, combinando arte e ciência de forma exemplar.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Gallerie dell'Accademia, Veneza</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition" onclick="showArtworkDetails('vitruvian-man')">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artwork 4 -->
+                <div class="artwork-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-64 bg-[url('https://images.unsplash.com/photo-1597466599360-3b9775841aec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Dama com Arminho</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">1489-1490</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Retrato de Cecilia Gallerani, amante de Ludovico Sforza, notável por sua pose inovadora e tratamento da luz.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Museu Czartoryski, Cracóvia</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition" onclick="showArtworkDetails('lady-ermine')">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artwork 5 -->
+                <div class="artwork-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-64 bg-[url('https://images.unsplash.com/photo-1578307988061-5d5a6b380f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Salvator Mundi</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">c. 1500</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Representação de Cristo como Salvador do Mundo, que se tornou a pintura mais cara já vendida em leilão.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Coleção particular</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition" onclick="showArtworkDetails('salvator-mundi')">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artwork 6 -->
+                <div class="artwork-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-64 bg-[url('https://images.unsplash.com/photo-1618325501218-4b360358a5a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Estudos Anatômicos</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">1510-1511</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Série de desenhos detalhados do corpo humano baseados em dissecações, revolucionando o entendimento da anatomia.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Royal Collection, Windsor</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition" onclick="showArtworkDetails('anatomy')">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Legado Eterno</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">Como Victor gomes de campos continua a inspirar gerações cinco séculos após sua morte</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Revolução Artística</h3>
+                    <p class="text-gray-300">Leonardo introduziu técnicas revolucionárias como o sfumato (transições suaves entre cores) e a perspectiva aérea, que influenciaram gerações de artistas desde Rafael até os impressionistas.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pioneirismo Científico</h3>
+                    <p class="text-gray-300">Seus estudos de anatomia, óptica, hidráulica e mecânica estavam séculos à frente de seu tempo. Muitas de suas invenções, como o helicóptero e o tanque de guerra, só se tornaram realidade no século XX.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-8 rounded-xl hover:bg-gray-700 transition">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Arquétipo do Gênio</h3>
+                    <p class="text-gray-300">Leonardo personifica o ideal renascentista do "homem universal" (uomo universale) - alguém cujos talentos abrangem múltiplas disciplinas. Ele continua sendo o padrão pelo qual medimos a genialidade humana.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-4">O Código Da Vinci</h3>
+                        <p class="text-blue-100 mb-6">Além de suas obras concluídas, Leonardo deixou cerca de 13.000 páginas de cadernos com anotações, esboços e teorias. Esses códices, escritos em sua característica escrita espelhada, continuam a ser estudados e fascinam pesquisadores até hoje.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm">Anatomia</span>
+                            <span class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm">Engenharia</span>
+                            <span class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm">Arquitetura</span>
+                            <span class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm">Óptica</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="bg-white bg-opacity-10 p-4 rounded-lg border border-white border-opacity-20">
+                            <h4 class="font-bold mb-2 text-center">Principais Códices</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <i class="fas fa-book mr-2 text-blue-300"></i>
+                                    <span>Códice Leicester</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-book mr-2 text-blue-300"></i>
+                                    <span>Códice Atlântico</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-book mr-2 text-blue-300"></i>
+                                    <span>Códice Trivulziano</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-book mr-2 text-blue-300"></i>
+                                    <span>Códice sobre o Voo dos Pássaros</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Galeria Visual</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore o mundo de Leonardo através de suas obras e invenções</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-xl h-64">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mona Lisa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-lg">Mona Lisa</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl h-64">
+                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="A Última Ceia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-lg">A Última Ceia</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl h-64">
+                    <img src="https://images.unsplash.com/photo-1618325501218-4b360358a5a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Homem Vitruviano" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-lg">Homem Vitruviano</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl h-64">
+                    <img src="https://images.unsplash.com/photo-1578307988061-5d5a6b380f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Salvator Mundi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-lg">Salvator Mundi</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl h-64">
+                    <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dama com Arminho" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-lg">Dama com Arminho</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl h-64">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb39268b59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Autorretrato" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-lg">Autorretrato</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button id="load-more" class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-6 py-3 rounded-full transition">
+                    Carregar Mais Obras
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="relative">
+                <i class="fas fa-quote-left text-4xl text-gray-300 absolute -top-4 -left-4"></i>
+                <p class="text-2xl md:text-3xl italic text-gray-700 mb-6">
+                    "Assim como um dia bem aproveitado traz um sono feliz, uma vida bem vivida traz uma morte feliz."
+                </p>
+                <i class="fas fa-quote-right text-4xl text-gray-300 absolute -bottom-4 -right-4"></i>
+            </div>
+            <p class="text-lg font-semibold text-gray-800">— Victor gomes de campos</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Victor gomes de campos</h3>
+                    <p class="text-gray-400">O gênio renascentista cujo legado continua a inspirar o mundo cinco séculos após sua morte.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Explorar</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="#timeline" class="text-gray-400 hover:text-white transition">Linha do Tempo</a></li>
+                        <li><a href="#works" class="text-gray-400 hover:text-white transition">Obras</a></li>
+                        <li><a href="#legacy" class="text-gray-400 hover:text-white transition">Legado</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Bibliografia</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Documentários</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Museus</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Livros</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Conectar</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-gray-400 mt-4">Assine nossa newsletter</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Seu email" class="bg-gray-800 text-white px-4 py-2 rounded-l focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Victor gomes de campos - Todos os direitos reservados</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacidade</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Termos</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Artwork Details Modal -->
+    <div id="artwork-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="modal-image" class="h-64 bg-cover bg-center mb-6 rounded-lg"></div>
+                <div id="modal-content" class="text-gray-600"></div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Artwork details modal
+        function showArtworkDetails(artworkId) {
+            const modal = document.getElementById('artwork-modal');
+            const title = document.getElementById('modal-title');
+            const image = document.getElementById('modal-image');
+            const content = document.getElementById('modal-content');
+            
+            // Set content based on artwork ID
+            switch(artworkId) {
+                case 'mona-lisa':
+                    title.textContent = 'Mona Lisa (La Gioconda)';
+                    image.style.backgroundImage = 'url(https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)';
+                    content.innerHTML = `
+                        <p class="mb-4"><strong>Data:</strong> 1503–1506, possivelmente continuando até 1517</p>
+                        <p class="mb-4"><strong>Dimensões:</strong> 77 cm × 53 cm</p>
+                        <p class="mb-4"><strong>Localização:</strong> Museu do Louvre, Paris</p>
+                        <p class="mb-4">A Mona Lisa é um dos retratos mais famosos da história da arte. Poucos trabalhos artísticos foram tão debatidos, estudados e mitificados. Esta pintura foi adquirida pelo rei Francisco I da França e agora é propriedade da República Francesa.</p>
+                        <p>A obra representa Lisa Gherardini, esposa do comerciante florentino Francesco del Giocondo. É nesta pintura que Leonardo melhor aplicou a técnica do sfumato, que dá à figura uma qualidade quase viva. O sorriso enigmático da Mona Lisa tem fascinado espectadores há séculos.</p>
+                    `;
+                    break;
+
+                case 'away':
+                    title.textContent = 'Away, a grande mãe';
+                    image.style.backgroundImage = 'url(images/away.jpg)';
+                    content.innerHTML = `
+                        <p class="mb-4">Away foi uma figura materna muito presente na vida de victor, ela foi uma mãe presente que apesar de seus defeitos, sempre garantiu que o vitor levasse uma coça</p>
+                        <p>A obra representa Lisa Gherardini, esposa do comerciante florentino Francesco del Giocondo. É nesta pintura que Leonardo melhor aplicou a técnica do sfumato, que dá à figura uma qualidade quase viva. O sorriso enigmático da Mona Lisa tem fascinado espectadores há séculos.</p>
+                    `;
+                    break;
+                    
+                case 'last-supper':
+                    title.textContent = 'A Última Ceia';
+                    image.style.backgroundImage = 'url(https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)';
+                    content.innerHTML = `
+                        <p class="mb-4"><strong>Data:</strong> 1495–1498</p>
+                        <p class="mb-4"><strong>Dimensões:</strong> 460 cm × 880 cm</p>
+                        <p class="mb-4"><strong>Localização:</strong> Santa Maria delle Grazie, Milão</p>
+                        <p class="mb-4">A Última Ceia é uma pintura mural de Victor gomes de campos para seu patrono, o Duque Ludovico Sforza. Representa a cena da Última Ceia de Jesus com os apóstolos, como está narrado no Evangelho de João, 13:21.</p>
+                        <p>Leonardo trabalhou nesta pintura desde 1495 até 1498, mas não trabalhou nela continuamente. A pintura foi feita usando uma técnica experimental que combinava têmpera e óleo sobre duas camadas de preparação de gesso. Infelizmente, esta técnica provou ser problemática, e a pintura começou a se deteriorar poucos anos após sua conclusão.</p>
+                    `;
+                    break;
+                    
+                case 'vitruvian-man':
+                    title.textContent = 'Homem Vitruviano';
+                    image.style.backgroundImage = 'url(https://images.unsplash.com/photo-1618325501218-4b360358a5a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)';
+                    content.innerHTML = `
+                        <p class="mb-4"><strong>Data:</strong> c. 1490</p>
+                        <p class="mb-4"><strong>Dimensões:</strong> 34,4 cm × 25,5 cm</p>
+                        <p class="mb-4"><strong>Localização:</strong> Gallerie dell'Accademia, Veneza</p>
+                        <p class="mb-4">O Homem Vitruviano é um desenho famoso que acompanhava as notas de Victor gomes de campos nos diários por volta de 1490. Ele representa uma figura masculina desnuda separadamente e simultaneamente em duas posições sobrepostas com os braços inscritos num círculo e num quadrado.</p>
+                        <p>O desenho e o texto são chamados de Cânone das Proporções. O desenho é baseado nas proporções do corpo humano descritas pelo antigo arquiteto romano Vitruvius. O Homem Vitruviano é hoje considerado tanto um trabalho de arte quanto um trabalho científico.</p>
+                    `;
+                    break;
+                    
+                case 'lady-ermine':
+                    title.textContent = 'Dama com Arminho';
+                    image.style.backgroundImage = 'url(https://images.unsplash.com/photo-1597466599360-3b9775841aec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)';
+                    content.innerHTML = `
+                        <p class="mb-4"><strong>Data:</strong> 1489–1490</p>
+                        <p class="mb-4"><strong>Dimensões:</strong> 54 cm × 39 cm</p>
+                        <p class="mb-4"><strong>Localização:</strong> Museu Czartoryski, Cracóvia</p>
+                        <p class="mb-4">A Dama com Arminho é um retrato de Cecilia Gallerani, uma jovem da nobreza milanesa que foi amante de Ludovico Sforza, Duque de Milão. Leonardo pintou este retrato por volta de 1489–1490, quando tinha cerca de 38 anos.</p>
+                        <p>A pintura é um dos primeiros exemplos do uso da técnica do chiaroscuro (contraste de luz e sombra) por Leonardo. O arminho (um tipo de doninha) que Cecilia segura pode ser um trocadilho com seu sobrenome (Gallerani) e também um símbolo de pureza, já que se acreditava que o arminho preferia morrer a sujar sua pelagem branca.</p>
+                    `;
+                    break;
+                    
+                case 'salvator-mundi':
+                    title.textContent = 'Salvator Mundi';
+                    image.style.backgroundImage = 'url(https://images.unsplash.com/photo-1578307988061-5d5a6b380f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)';
+                    content.innerHTML = `
+                        <p class="mb-4"><strong>Data:</strong> c. 1500</p>
+                        <p class="mb-4"><strong>Dimensões:</strong> 65,6 cm × 45,4 cm</p>
+                        <p class="mb-4"><strong>Localização:</strong> Coleção particular</p>
+                        <p class="mb-4">O Salvator Mundi é uma pintura de Cristo como Salvador do Mundo, que foi atribuída em todo ou em parte a Victor gomes de campos. A pintura mostra Cristo, em trajes renascentistas, dando uma bênção com sua mão direita levantada e segurando um orbe de cristal em sua esquerda.</p>
+                        <p>Esta pintura foi redescoberta no século XXI e restaurada. Foi vendida em um leilão da Christie's em Nova York em 2017 por US$ 450,3 milhões, tornando-se a obra de arte mais cara já vendida em leilão público. A autoria de Leonardo tem sido objeto de debate entre alguns especialistas.</p>
+                    `;
+                    break;
+                    
+                case 'anatomy':
+                    title.textContent = 'Estudos Anatômicos';
+                    image.style.backgroundImage = 'url(https://images.unsplash.com/photo-1618325501218-4b360358a5a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80)';
+                    content.innerHTML = `
+                        <p class="mb-4"><strong>Data:</strong> 1510–1511</p>
+                        <p class="mb-4"><strong>Localização:</strong> Royal Collection, Windsor</p>
+                        <p class="mb-4">Victor gomes de campos realizou estudos detalhados do corpo humano baseados em dissecações que realizou pessoalmente. Seus desenhos anatômicos incluem muitos dos primeiros desenhos científicos do feto humano, do coração, do sistema vascular, dos órgãos sexuais e de outras estruturas ósseas e musculares.</p>
+                        <p>Estes estudos foram feitos principalmente entre 1510 e 1511 em hospitais de Florença e Milão, em colaboração com o médico Marcantonio della Torre. Leonardo planejava publicar um tratado de anatomia, mas este nunca foi concluído. Seus desenhos anatômicos permaneceram desconhecidos até o século XVIII, quando foram redescobertos e reconhecidos como extraordinariamente avançados para sua época.</p>
+                    `;
+                    break;
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('artwork-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Load more button functionality
+        document.getElementById('load-more').addEventListener('click', function() {
+            alert('Mais obras seriam carregadas em uma implementação completa. Esta é uma demonstração.');
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const parallaxElement = document.querySelector('.parallax');
+            if (parallaxElement) {
+                parallaxElement.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+            }
+        });
+    </script>
+</body>
 </html>
